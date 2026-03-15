@@ -15,7 +15,7 @@ resources:
 # - https://github.com/argoproj-labs/argocd-extensions/manifests
 
 patches:
-# - path: overlays/production/argo-cd-cm.yaml
+- path: overlays/production/argo-cd-cm.yaml
 # - path: overlays/production/argocd-cmd-params-cm.yaml
 # - path: overlays/production/argocd-notifications-cm.yaml
 # - path: overlays/production/argocd-notifications-controller-deploy.yaml
