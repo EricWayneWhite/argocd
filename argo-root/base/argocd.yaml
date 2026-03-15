@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+  ### Just as a prevention, we do not want Argo CD to self delete
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd
+    repoURL: https://github.com/EricWayneWhite/argocd
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+      - ClientSideApplyMigration=false
+    ### Disable Argo CD auto-sync to better control updates of what is merged upstream
+    # automated:
+    #   prune: true
+    #   selfHeal: true
