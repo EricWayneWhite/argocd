@@ -9,19 +9,19 @@ resources:
 # - base/argo-cd-ui-ingress.yaml
 # - base/rollouts-extension.yaml
 - base/sync-project.yaml
-- https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/ha/install.yaml
+- https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml
 
 # components:
 # - https://github.com/argoproj-labs/argocd-extensions/manifests
 
 patches:
-- path: overlays/production/argo-cd-cm.yaml
-- path: overlays/production/argocd-cmd-params-cm.yaml
+# - path: overlays/production/argo-cd-cm.yaml
+# - path: overlays/production/argocd-cmd-params-cm.yaml
 # - path: overlays/production/argocd-notifications-cm.yaml
 # - path: overlays/production/argocd-notifications-controller-deploy.yaml
 # - path: overlays/production/argocd-rbac-cm.yaml
-- path: overlays/production/argocd-server-service.yaml
-- path: https://raw.githubusercontent.com/argoproj/argo-cd/master/notifications_catalog/install.yaml
+# - path: overlays/production/argocd-server-service.yaml
+# - path: https://raw.githubusercontent.com/argoproj/argo-cd/master/notifications_catalog/install.yaml
 - path: overlays/production/patch-priority-class.yaml
   target:
     kind: Deployment
